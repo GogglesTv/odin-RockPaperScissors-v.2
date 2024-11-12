@@ -1,3 +1,7 @@
+// Human and CPU Scores
+let humanScore = 0;
+let computerScore = 0;
+
 // List of weapons in an array
 const weapons = ["rock", "paper", "scissors"];
 
@@ -10,7 +14,6 @@ const getComputerChoice = function () {
 
   return computerWeapon;
 };
-getComputerChoice();
 
 const getHumanChoice = function () {
   let humanWeapon = prompt("Rock, Paper, or Scissors?");
