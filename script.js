@@ -48,6 +48,15 @@ const playRound = function (humanChoice, computerChoice) {
     computerScore++;
   }
 
+  // Round ends in a tie
+  if (
+    (humanChoice === "rock" && computerChoice === "rock") ||
+    (humanChoice === "paper" && computerChoice === "paper") ||
+    (humanChoice === "scissors" && computerChoice === "scissors")
+  ) {
+    console.log("It's a tie! Go again!");
+  }
+
   console.log("Human Weapon: " + humanChoice);
   console.log("Computer Weapon: " + computerChoice);
 };
