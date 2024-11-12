@@ -26,10 +26,13 @@ const humanSelection = getHumanChoice();
 const playRound = function (humanChoice, computerChoice) {
   if (humanChoice === "rock" && computerChoice === "scissors") {
     console.log("You win! Rock beats scissors");
+    humanScore++;
   } else if (humanChoice === "paper" && computerChoice === "rock") {
     console.log("You win! Paper beats rock");
+    humanScore++;
   } else if (humanChoice === "scissors" && computerChoice === "paper") {
     console.log("You win! Scissors beats paper");
+    humanScore++;
   }
 
   console.log("Human Weapon: " + humanChoice);
