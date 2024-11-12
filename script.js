@@ -57,7 +57,20 @@ const playRound = function (humanChoice, computerChoice) {
     console.log("It's a tie! Go again!");
   }
 
+  // Human weapon is invalid
+  if (
+    humanChoice !== "rock" &&
+    humanChoice !== "paper" &&
+    humanChoice !== "scissors"
+  ) {
+    console.log("Invalid weapon");
+  }
+
   console.log("Human Weapon: " + humanChoice);
   console.log("Computer Weapon: " + computerChoice);
+  console.log(
+    `SCORE - Human Score: ${humanScore}`,
+    `Computer score: ${computerScore}`
+  );
 };
 playRound(humanSelection, computerSelection);
