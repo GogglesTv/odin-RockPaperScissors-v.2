@@ -14,11 +14,25 @@ const getComputerChoice = function () {
 
   return computerWeapon;
 };
+const computerSelection = getComputerChoice();
 
 const getHumanChoice = function () {
   let humanWeapon = prompt("Rock, Paper, or Scissors?");
 
-  console.log(humanWeapon);
   return humanWeapon;
 };
-getHumanChoice();
+const humanSelection = getHumanChoice();
+
+const playRound = function (humanChoice, computerChoice) {
+  if (humanChoice === "rock" && computerChoice === "scissors") {
+    console.log("You win! Rock beats scissors");
+  } else if (humanChoice === "paper" && computerChoice === "rock") {
+    console.log("You win! Paper beats rock");
+  } else if (humanChoice === "scissors" && computerChoice === "paper") {
+    console.log("You win! Scissors beats paper");
+  }
+
+  console.log("Human Weapon: " + humanChoice);
+  console.log("Computer Weapon: " + computerChoice);
+};
+playRound(humanSelection, computerSelection);
