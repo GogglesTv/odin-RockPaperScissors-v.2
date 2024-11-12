@@ -17,7 +17,7 @@ const getComputerChoice = function () {
 const computerSelection = getComputerChoice();
 
 const getHumanChoice = function () {
-  let humanWeapon = prompt("Rock, Paper, or Scissors?");
+  let humanWeapon = prompt("Rock, Paper, or Scissors?").toLowerCase();
 
   return humanWeapon;
 };
