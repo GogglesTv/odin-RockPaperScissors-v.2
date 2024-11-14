@@ -1,6 +1,8 @@
 // Human and CPU Scores
 let humanScore = 0;
 let computerScore = 0;
+let humanWeapon = "";
+let computerWeapon = "";
 
 // List of weapons in an array
 const weapons = ["rock", "paper", "scissors"];
@@ -10,14 +12,14 @@ const getComputerChoice = function () {
   let randomNumber = Math.floor(Math.random() * 3);
 
   // use the number to choose a weapon
-  let computerWeapon = weapons[randomNumber];
+  computerWeapon = weapons[randomNumber];
 
   return computerWeapon;
 };
 const computerSelection = getComputerChoice();
 
 const getHumanChoice = function () {
-  let humanWeapon = prompt("Rock, Paper, or Scissors?").toLowerCase();
+  humanWeapon = prompt("Rock, Paper, or Scissors?").toLowerCase();
 
   return humanWeapon;
 };
@@ -72,5 +74,9 @@ const playRound = function (humanChoice, computerChoice) {
     `SCORE - Human Score: ${humanScore}`,
     `Computer score: ${computerScore}`
   );
+
+  // reset weapon choices
+  humanWeapon = "";
+  computerWeapon = "";
 };
 playRound(humanSelection, computerSelection);
