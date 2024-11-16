@@ -3,6 +3,7 @@ let humanScore = 0;
 let computerScore = 0;
 let humanWeapon = "";
 let computerWeapon = "";
+let winner = false;
 
 // List of weapons in an array
 const weapons = ["rock", "paper", "scissors"];
@@ -74,9 +75,22 @@ const playRound = function (humanChoice, computerChoice) {
   );
 };
 
+// Checks for a winner
+function checkWinner(humanScore, computerScore) {
+  if (humanScore === 3) {
+    winner = true;
+    console.log("GAME OVER! USER WINS!");
+    alert("YOU WIN!");
+  } else if (computerScore === 3) {
+    winner = true;
+    console.log("GAME OVER! USER WINS!");
+    alert("YOU LOSE! BETTER LUCK NEXT TIME MY GUY.");
+  }
+}
 const playGame = function () {
-  while (humanScore !== 3 && computerScore !== 3) {
+  while (winner === false) {
     playRound(getHumanChoice(), getComputerChoice());
+    checkWinner(humanScore, computerScore);
   }
 };
 
