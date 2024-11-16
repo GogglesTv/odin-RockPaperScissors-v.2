@@ -1,8 +1,10 @@
-// Human and CPU Scores
+// Human and CPU Scores and Weapons
 let humanScore = 0;
 let computerScore = 0;
 let humanWeapon = "";
 let computerWeapon = "";
+
+// Boolean value to recognize the game is over
 let winner = false;
 
 // List of weapons in an array
