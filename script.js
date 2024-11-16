@@ -80,11 +80,11 @@ function checkWinner(humanScore, computerScore) {
   if (humanScore === 3) {
     winner = true;
     console.log("GAME OVER! USER WINS!");
-    alert("YOU WIN!");
+    alert("YOU WON!");
   } else if (computerScore === 3) {
     winner = true;
-    console.log("GAME OVER! USER WINS!");
-    alert("YOU LOSE! BETTER LUCK NEXT TIME MY GUY.");
+    console.log("GAME OVER! COMPUTER WINS!");
+    alert("YOU LOSS! BETTER LUCK NEXT TIME MY GUY.");
   }
 }
 const playGame = function () {
