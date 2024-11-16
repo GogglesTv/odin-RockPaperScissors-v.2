@@ -16,14 +16,12 @@ const getComputerChoice = function () {
 
   return computerWeapon;
 };
-const computerSelection = getComputerChoice();
 
 const getHumanChoice = function () {
   humanWeapon = prompt("Rock, Paper, or Scissors?").toLowerCase();
 
   return humanWeapon;
 };
-const humanSelection = getHumanChoice();
 
 const playRound = function (humanChoice, computerChoice) {
   // Human wins round
@@ -74,9 +72,12 @@ const playRound = function (humanChoice, computerChoice) {
     `SCORE - Human Score: ${humanScore}`,
     `Computer score: ${computerScore}`
   );
-
-  // reset weapon choices
-  humanWeapon = "";
-  computerWeapon = "";
 };
-playRound(humanSelection, computerSelection);
+
+const playGame = function () {
+  while (humanScore !== 3 && computerScore !== 3) {
+    playRound(getHumanChoice(), getComputerChoice());
+  }
+};
+
+playGame();
