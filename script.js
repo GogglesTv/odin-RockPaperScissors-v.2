@@ -85,14 +85,14 @@ const playRound = function (humanChoice, computerChoice) {
 
 // Checks for a winner
 function checkWinner(humanScore, computerScore) {
-  if (humanScore === 3) {
+  if (humanScore === 5) {
     winner = true;
     console.log("GAME OVER! USER WINS!");
-    alert("YOU WON!");
-  } else if (computerScore === 3) {
+    alert("YOU WON! GGs MY GUY.");
+  } else if (computerScore === 5) {
     winner = true;
     console.log("GAME OVER! COMPUTER WINS!");
-    alert("YOU LOSS! BETTER LUCK NEXT TIME MY GUY.");
+    alert("YOU LOST! BETTER LUCK NEXT TIME MY GUY.");
   }
 
   if (winner === true) {
