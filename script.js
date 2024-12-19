@@ -97,3 +97,24 @@ const playGame = function () {
 };
 
 // playGame();
+
+let humanChoice = document.querySelector("#weapons");
+
+humanChoice.addEventListener("click", (event) => {
+  let target = event.target;
+
+  switch (target.id) {
+    case "rock":
+      console.log("Rock was chosen");
+      playRound("rock", getComputerChoice());
+      break;
+    case "paper":
+      console.log("Paper was chosen");
+      playRound("rock", getComputerChoice());
+      break;
+    case "scissors":
+      console.log("Scissors was chosen");
+      playRound("rock", getComputerChoice());
+      break;
+  }
+});
