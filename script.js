@@ -59,15 +59,6 @@ const playRound = function (humanChoice, computerChoice) {
     roundResult.textContent = "It's a tie! Go again!";
   }
 
-  // Human weapon is invalid
-  if (
-    humanChoice !== "rock" &&
-    humanChoice !== "paper" &&
-    humanChoice !== "scissors"
-  ) {
-    console.log("Invalid weapon");
-  }
-
   console.log("Human Weapon: " + humanChoice);
   console.log("Computer Weapon: " + computerChoice);
   console.log(
@@ -81,11 +72,11 @@ function checkWinner(humanScore, computerScore) {
   if (humanScore === 5) {
     winner = true;
     console.log("GAME OVER! USER WINS!");
-    roundResult = "YOU WON! GGs MY GUY.";
+    roundResult.textContent = "YOU WON! GGs MY GUY.";
   } else if (computerScore === 5) {
     winner = true;
     console.log("GAME OVER! COMPUTER WINS!");
-    roundResult = "YOU LOST! BETTER LUCK NEXT TIME MY GUY.";
+    roundResult.textContent = "YOU LOST! BETTER LUCK NEXT TIME MY GUY.";
   }
 
   if (winner === true) {
@@ -94,14 +85,6 @@ function checkWinner(humanScore, computerScore) {
     humanChoice.querySelector("#scissors").disabled = true;
   }
 }
-const playGame = function () {
-  while (winner === false) {
-    playRound(getHumanChoice(), getComputerChoice());
-    checkWinner(humanScore, computerScore);
-  }
-};
-
-// playGame();
 
 let humanChoice = document.querySelector("#weapons");
 let humanScoreVis = document.querySelector("#player-score");
