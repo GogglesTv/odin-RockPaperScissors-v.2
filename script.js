@@ -31,24 +31,30 @@ const playRound = function (humanChoice, computerChoice) {
   if (humanChoice === "rock" && computerChoice === "scissors") {
     console.log("You win! Rock beats scissors");
     humanScore++;
+    humanScoreVis.textContent = humanScore;
   } else if (humanChoice === "paper" && computerChoice === "rock") {
     console.log("You win! Paper beats rock");
     humanScore++;
+    humanScoreVis.textContent = humanScore;
   } else if (humanChoice === "scissors" && computerChoice === "paper") {
     console.log("You win! Scissors beats paper");
     humanScore++;
+    humanScoreVis.textContent = humanScore;
   }
 
   // Computer wins round
   if (computerChoice === "rock" && humanChoice === "scissors") {
     console.log("You lose! Rock beats scissors");
     computerScore++;
+    cpuScoreVis.textContent = computerScore;
   } else if (computerChoice === "paper" && humanChoice === "rock") {
     console.log("You lose! Paper beats rock");
     computerScore++;
+    cpuScoreVis.textContent = computerScore;
   } else if (computerChoice === "scissors" && humanChoice === "paper") {
     console.log("You lose! Scissors beats paper");
     computerScore++;
+    cpuScoreVis.textContent = computerScore;
   }
 
   // Round ends in a tie
@@ -99,6 +105,8 @@ const playGame = function () {
 // playGame();
 
 let humanChoice = document.querySelector("#weapons");
+let humanScoreVis = document.querySelector("#player-score");
+let cpuScoreVis = document.querySelector("#cpu-score");
 
 humanChoice.addEventListener("click", (event) => {
   let target = event.target;
