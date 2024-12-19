@@ -96,4 +96,4 @@ const playGame = function () {
   }
 };
 
-playGame();
+// playGame();
