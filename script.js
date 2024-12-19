@@ -94,6 +94,12 @@ function checkWinner(humanScore, computerScore) {
     console.log("GAME OVER! COMPUTER WINS!");
     alert("YOU LOSS! BETTER LUCK NEXT TIME MY GUY.");
   }
+
+  if (winner === true) {
+    humanChoice.querySelector("#rock").disabled = true;
+    humanChoice.querySelector("#paper").disabled = true;
+    humanChoice.querySelector("#scissors").disabled = true;
+  }
 }
 const playGame = function () {
   while (winner === false) {
@@ -115,14 +121,17 @@ humanChoice.addEventListener("click", (event) => {
     case "rock":
       console.log("Rock was chosen");
       playRound("rock", getComputerChoice());
+      checkWinner(humanScore, computerScore);
       break;
     case "paper":
       console.log("Paper was chosen");
       playRound("rock", getComputerChoice());
+      checkWinner(humanScore, computerScore);
       break;
     case "scissors":
       console.log("Scissors was chosen");
       playRound("rock", getComputerChoice());
+      checkWinner(humanScore, computerScore);
       break;
   }
 });
