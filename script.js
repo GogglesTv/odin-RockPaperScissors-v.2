@@ -22,30 +22,30 @@ const getComputerChoice = function () {
 const playRound = function (humanChoice, computerChoice) {
   // Human wins round
   if (humanChoice === "rock" && computerChoice === "scissors") {
-    console.log("You win! Rock beats scissors");
+    roundResult.textContent = "You win! Rock beats scissors";
     humanScore++;
     humanScoreVis.textContent = humanScore;
   } else if (humanChoice === "paper" && computerChoice === "rock") {
-    console.log("You win! Paper beats rock");
+    roundResult.textContent = "You win! Paper beats rock";
     humanScore++;
     humanScoreVis.textContent = humanScore;
   } else if (humanChoice === "scissors" && computerChoice === "paper") {
-    console.log("You win! Scissors beats paper");
+    roundResult.textContent = "You win! Scissors beats paper";
     humanScore++;
     humanScoreVis.textContent = humanScore;
   }
 
   // Computer wins round
   if (computerChoice === "rock" && humanChoice === "scissors") {
-    console.log("You lose! Rock beats scissors");
+    roundResult.textContent = "You lose! Rock beats scissors";
     computerScore++;
     cpuScoreVis.textContent = computerScore;
   } else if (computerChoice === "paper" && humanChoice === "rock") {
-    console.log("You lose! Paper beats rock");
+    roundResult.textContent = "You lose! Paper beats rock";
     computerScore++;
     cpuScoreVis.textContent = computerScore;
   } else if (computerChoice === "scissors" && humanChoice === "paper") {
-    console.log("You lose! Scissors beats paper");
+    roundResult.textContent = "You lose! Scissors beats pape";
     computerScore++;
     cpuScoreVis.textContent = computerScore;
   }
@@ -56,7 +56,7 @@ const playRound = function (humanChoice, computerChoice) {
     (humanChoice === "paper" && computerChoice === "paper") ||
     (humanChoice === "scissors" && computerChoice === "scissors")
   ) {
-    console.log("It's a tie! Go again!");
+    roundResult.textContent = "It's a tie! Go again!";
   }
 
   // Human weapon is invalid
@@ -81,11 +81,11 @@ function checkWinner(humanScore, computerScore) {
   if (humanScore === 5) {
     winner = true;
     console.log("GAME OVER! USER WINS!");
-    alert("YOU WON! GGs MY GUY.");
+    roundResult = "YOU WON! GGs MY GUY.";
   } else if (computerScore === 5) {
     winner = true;
     console.log("GAME OVER! COMPUTER WINS!");
-    alert("YOU LOST! BETTER LUCK NEXT TIME MY GUY.");
+    roundResult = "YOU LOST! BETTER LUCK NEXT TIME MY GUY.";
   }
 
   if (winner === true) {
@@ -106,6 +106,7 @@ const playGame = function () {
 let humanChoice = document.querySelector("#weapons");
 let humanScoreVis = document.querySelector("#player-score");
 let cpuScoreVis = document.querySelector("#cpu-score");
+let roundResult = document.querySelector("#game-results");
 
 humanChoice.addEventListener("click", (event) => {
   let target = event.target;
