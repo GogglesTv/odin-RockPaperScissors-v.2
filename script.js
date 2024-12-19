@@ -1,7 +1,6 @@
 // Human and CPU Scores and Weapons
 let humanScore = 0;
 let computerScore = 0;
-let humanWeapon = "";
 let computerWeapon = "";
 
 // Boolean value to recognize the game is over
@@ -18,12 +17,6 @@ const getComputerChoice = function () {
   computerWeapon = weapons[randomNumber];
 
   return computerWeapon;
-};
-
-const getHumanChoice = function () {
-  humanWeapon = prompt("Rock, Paper, or Scissors?").toLowerCase();
-
-  return humanWeapon;
 };
 
 const playRound = function (humanChoice, computerChoice) {
